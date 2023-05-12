@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/homepage_style.css
+    ">
+    <title>I Found A Rock!</title>
+</head>
+<body>
+    <div id="nav_bar">
+        <h1>I Found A Rock!</h1>
+    </div>
+    <div id="left_display">
+        <div id="map_header">
+            <h3>Where Our Rocks Have Been</h3>
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Date Found</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rock in rocks %}
+                <tr>
+                    <td>{{ rock.date_found }}</td>
+                    <td>{{ rock.city }}</td>
+                    <td>{{ rock.state }}</td>
+                    <td>{{ rock.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <div id="right_display">
+        <div id="log_location">
+            <div id="log_header">
+                <h3 id="tell">Tell Us Where You Found Your Rock!</h3>
+            </div>
+            <p>Click <a href="/log">here</a> to record your rock and add to our project!</p>
+            <a href="/log">Record Your Rock!</a>
+        </div>
+        <div id="about">
+            <div id="about_header">
+                <h3>Who painted these rocks?</h3>
+            </div>
+            <img src="/static/family.jpg" alt="family" width="200" height="200">
+            <p id="who">We are a full-time RVing family, traveling the country from Wyoming to ?? and hiding rocks along the way! The kids - ages 5, 7, and 9 - paint these rocks for fun, and want to see how far they can travel. If you find one of our rocks, make sure to log it above and then rehide it somewhere new so we can see how far they go!
+            </p>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
